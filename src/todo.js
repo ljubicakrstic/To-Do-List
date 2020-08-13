@@ -29,7 +29,7 @@ export const stavke = [
 
 export function add(novi){
     stavke.push(novi);
-   // console.log(stavke);
+    
 }
 
 export function deleteItem(id){
@@ -53,3 +53,18 @@ export function change(id, novi){
     stavke.splice(index, 1, novi);
     // console.log(stavke);
 }
+
+export function isValid(newItem){
+    if(newItem.trim() == ""){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+export function showError(){
+    const errorPar = document.createElement("p");
+    errorPar.textContent = "Unesite stavku";
+    document.getElementById("input").appendChild(errorPar);
+}
+
